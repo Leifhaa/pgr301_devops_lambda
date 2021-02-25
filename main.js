@@ -1,17 +1,20 @@
 'use strict'
 
 exports.handler = function (event, context, callback) {
+  console.log("event: " + event)
+  console.log("context: " + context)
+  console.log("callback: " + callback)
   const price = priceCalc(100)
 
   //I'm not persisting the price anywhere, this is just for demonstration.
-  //There could e.g be a database for invoices which we would persist to here.
+  //There could e.g be a database for invoices which we could persist the price.
 
   var response = {
     statusCode: 200,
     headers: {
       'Content-Type': 'text/html; charset=utf-8',
     },
-    body: '<p>Hello world!</p>',
+    body: '',
   }
   callback(null, response)
 }
