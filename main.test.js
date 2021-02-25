@@ -2,11 +2,12 @@ const {priceCalc} = require('./main')
 
 test('Test Discount', () => {
     let firstElapsed = 999 //Not qualified for discount
-    let firstPrice = priceCalc(firstElapsed)
-    expect(firstPrice).toBeLessThan(firstElapsed);
+    const initPriceFirst = 999
+    let finalFirstPrice = priceCalc(firstElapsed, initPriceFirst)
+    expect(initPriceFirst).toBe(finalFirstPrice);
 
-    let secondElapsed = 1000 //Qualified for discount
-    let secondPrice = priceCalc(secondElapsed)
-    expect(secondPrice).toBeLessThan(firstElapsed)
-
+    let secondElapsed = 1001 //Qualified for discount
+    let initPriceSecond = 1001
+    let finalSecond = priceCalc(secondElapsed, initPriceSecond)
+    expect(initPriceSecond).toBeGreaterThan(finalSecond)
 });
