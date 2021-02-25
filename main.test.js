@@ -8,4 +8,5 @@ test('Test Discount', () => {
     let secondElapsed = 1000 //Qualified for discount
     let secondPrice = priceCalc(secondElapsed)
     expect(secondPrice).toBeLessThan(firstElapsed)
+
 });

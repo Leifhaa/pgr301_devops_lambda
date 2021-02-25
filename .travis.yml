@@ -14,12 +14,19 @@ env:
 
 
 
+before_deploy:
+  #Deploy the javascript file to s3 bucket
+  - zip myzip.zip main.js
+  - mkdir build
+  - mv myzip.zip build
+
 deploy:
   provider: s3
   access_key_id: $AWS_ACCESS_KEY_ID
   secret_access_key: $AWS_SECRET_ACCESS_KEY
   bucket: "aws-lambda-bucket-leifhaa"
   upload_dir: "v1.0.0"
+  local_dir: build
 
 branches:
   only:
