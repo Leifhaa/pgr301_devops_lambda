@@ -16,7 +16,7 @@ env:
 
 before_deploy:
   #Deploy the javascript file to s3 bucket
-  - zip myzip.zip main.js
+  - zip taskrunner.zip main.js
   - mkdir build
   - mv myzip.zip build
   - ls
