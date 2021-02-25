@@ -18,7 +18,7 @@ before_deploy:
   #Deploy the javascript file to s3 bucket
   - zip taskrunner.zip main.js
   - mkdir build
-  - mv myzip.zip build
+  - mv taskrunner.zip build
   - ls
 
 deploy:
