@@ -19,6 +19,7 @@ before_deploy:
   - zip myzip.zip main.js
   - mkdir build
   - mv myzip.zip build
+  - ls
 
 deploy:
   provider: s3
@@ -26,7 +27,8 @@ deploy:
   secret_access_key: $AWS_SECRET_ACCESS_KEY
   bucket: "aws-lambda-bucket-leifhaa"
   upload_dir: "v1.0.0"
-  local_dir: "./build"
+  skip_cleanup: true
+  local_dir: build
 
 branches:
   only:
