@@ -1,6 +1,5 @@
 'use strict'
 
-
 const priceCalc = (milliElapsed, initPrice) => {
   //For tasks running for a longer time, we give a discount
   let discount = 0;
@@ -21,7 +20,7 @@ exports.handler = async (event) => {
 
   const response = {
     statusCode: 200,
-    body: "initial price: " + initPrice + " and final is " + finalPrice
+    body: ""
     ,
   };
   return response;
