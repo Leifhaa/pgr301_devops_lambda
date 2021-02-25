@@ -1,6 +1,11 @@
 'use strict'
 
 exports.handler = function (event, context, callback) {
+  const price = priceCalc(100)
+
+  //I'm not persisting the price anywhere, this is just for demonstration.
+  //There could e.g be a database for invoices which we would persist to here.
+
   var response = {
     statusCode: 200,
     headers: {
@@ -10,4 +15,16 @@ exports.handler = function (event, context, callback) {
   }
   callback(null, response)
 }
+
+const priceCalc = (milliElapsed) => {
+  //For tasks running for a longer time, we give a discount
+  let discount = 0;
+  if (milliElapsed > 1000){
+    discount = 0.20
+  }
+  let tmpPrice = milliElapsed * 0.015
+  return tmpPrice - (tmpPrice * discount)
+}
+
+module.exports = { priceCalc};
 

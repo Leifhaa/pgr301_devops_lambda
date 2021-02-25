@@ -4,14 +4,17 @@
   "description": "aws-lambda",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Leifhaa/pgr301_devops_lambda.git"
   },
-  "author": "",
+  "author": "Leifhaa",
   "license": "ISC",
+  "dependencies": {
+    "jest": "^26.6.3"
+  },
   "bugs": {
     "url": "https://github.com/Leifhaa/pgr301_devops_lambda/issues"
   },
