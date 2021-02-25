@@ -19,7 +19,7 @@ deploy:
   access_key_id: $AWS_ACCESS_KEY_ID
   secret_access_key: $AWS_SECRET_ACCESS_KEY
   bucket: "aws-lambda-bucket-leifhaa"
-  endpoint: "v1.0.0"
+  upload_dir: "v1.0.0"
 
 branches:
   only:
