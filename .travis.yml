@@ -16,7 +16,7 @@ env:
 
 before_deploy:
   #Deploy the javascript file to s3 bucket
-  - zip taskrunner.zip main.js
+  - zip taskrunner.zip main.js priceCalc.js
   - mkdir build
   - mv taskrunner.zip build
   - ls

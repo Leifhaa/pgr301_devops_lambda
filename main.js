@@ -1,14 +1,5 @@
 'use strict'
-
-const priceCalc = (milliElapsed, initPrice) => {
-  //For tasks running for a longer time, we give a discount
-  let discount = 0;
-  if (milliElapsed > 1000){
-    discount = 0.20
-  }
-  return initPrice - (initPrice * discount)
-}
-
+const {priceCalc} = require("./priceCalc");
 
 exports.handler = async (event) => {
   const elapsed = Number(event.elapsed)
@@ -26,4 +17,3 @@ exports.handler = async (event) => {
   return response;
 };
 
-module.exports = { priceCalc};
