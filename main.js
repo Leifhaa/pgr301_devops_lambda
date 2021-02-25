@@ -10,22 +10,20 @@ const priceCalc = (milliElapsed, initPrice) => {
 }
 
 
-exports.handler = function (event, context, callback) {
+exports.handler = async (event) => {
   const elapsed = Number(event.elapsed)
   const initPrice = Number(event.price)
   const finalPrice = priceCalc(elapsed, initPrice)
 
-  //I'm not persisting the price anywhere, so the calculation is just for demonstration.
-  //There could e.g be a database for invoices which we could persist the final price.
+  //I'm not persisting the price anywhere, this is just for demonstration.
+  //There could e.g be a database for invoices which we could persist the price.
 
-  var response = {
+  const response = {
     statusCode: 200,
-    headers: {
-      'Content-Type': 'text/html; charset=utf-8',
-    },
-    body: '',
-  }
-  callback(null, response)
-}
+    body: ""
+    ,
+  };
+  return response;
+};
 
 module.exports = { priceCalc};
