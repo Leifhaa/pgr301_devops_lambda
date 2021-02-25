@@ -1,4 +1,4 @@
-const {priceCalc} = require('./main')
+const {priceCalc} = require('./priceCalc')
 
 test('Test Discount', () => {
     let firstElapsed = 999 //Not qualified for discount
